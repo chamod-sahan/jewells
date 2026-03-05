@@ -2,17 +2,18 @@ import type { Metadata } from 'next'
 import '../styles/globals.css'
 
 export const metadata: Metadata = {
-    title: 'AURELIUS | Ultra Luxury Gold Heritage',
-    description: 'Experience the pinnacle of luxury craftsmanship. 24-karat gold anti-gravity cinematic product art. Limited edition heritage collection.',
-    keywords: 'luxury, gold, heritage, jewelry, 24k, ultra luxury, cinematic',
+    title: 'JWELLS | Luxury Gold Heritage Collection',
+    description: 'Experience the pinnacle of luxury craftsmanship. Timeless gold jewellery for the modern connoisseur.',
+    keywords: 'jewelry, luxury, gold, heritage, JWELLS, cinematic',
     openGraph: {
-        title: 'AURELIUS | Ultra Luxury Gold Heritage',
+        title: 'JWELLS | Luxury Gold Heritage',
         description: 'Experience the pinnacle of luxury craftsmanship.',
         type: 'website',
     }
 }
 
 import { BackgroundScene } from '../components/Experience'
+import { CustomCursor } from '../components/CustomCursor'
 
 export default function RootLayout({
     children,
@@ -30,7 +31,7 @@ export default function RootLayout({
                 />
             </head>
             <body className="bg-[#050505] text-white selection:bg-[#D4AF37]/30">
-                <BackgroundScene />
+                <CustomCursor />
                 <main className="relative z-10">{children}</main>
             </body>
         </html>

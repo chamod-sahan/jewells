@@ -7,7 +7,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "static": "npx serve public -l 3000"
   },
   "keywords": [],
   "author": "",
@@ -16,8 +17,11 @@
     "@react-three/drei": "^10.7.7",
     "@react-three/fiber": "^9.5.0",
     "@react-three/postprocessing": "^3.0.4",
+    "@studio-freight/lenis": "^1.0.42",
     "@tailwindcss/postcss": "^4.2.1",
     "framer-motion": "^12.34.3",
+    "gsap": "^3.14.2",
+    "lenis": "^1.3.18",
     "lucide-react": "^0.575.0",
     "next": "^16.1.6",
     "react": "^19.2.4",
