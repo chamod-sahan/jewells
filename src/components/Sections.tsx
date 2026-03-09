@@ -43,7 +43,7 @@ export const Navbar = ({ show }: { show: boolean }) => (
 
 // ─── HOME/HERO (Brand Reveal) ──────────────────────────────────────────────
 export const HeroSection = ({ showBrand }: { showBrand: boolean }) => (
-    <div className="h-[100vh] flex items-center justify-center relative px-6 pointer-events-none">
+    <div className="h-[100vh] flex items-center justify-center relative px-10 pointer-events-none">
         <AnimatePresence>
             {showBrand && (
                 <motion.div
@@ -92,24 +92,25 @@ export const HeroSection = ({ showBrand }: { showBrand: boolean }) => (
 // ─── ABOUT US ───────────────────────────────────────────────────────────────
 export const AboutSection = () => (
     <div className="min-h-screen flex items-center px-6 md:px-20 lg:px-32 relative z-10 pointer-events-auto py-20">
-        <div className="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+        <div className="max-w-4xl mx-auto w-full flex flex-col items-center text-center px-4">
             <motion.div
-                initial={{ opacity: 0, x: -40 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 1.2, ease: 'easeOut' }}
+                className="flex flex-col items-center"
             >
-                <p className="text-[9px] tracking-[1.0em] text-[#D4AF37]/80 uppercase mb-8 pl-[1.0em]">The Atelier</p>
+                <p className="text-[9px] tracking-[1.0em] text-[#D4AF37]/80 uppercase mb-8">The Atelier</p>
                 <h2
-                    className="text-4xl md:text-6xl lg:text-7xl font-light text-white leading-[1.1] mb-10"
+                    className="text-4xl md:text-6xl lg:text-7xl font-light text-white leading-[1.1] mb-10 px-2"
                     style={{ fontFamily: "'Playfair Display', serif" }}
                 >
                     Generations of <span className="text-[#D4AF37] italic">Obsessive</span> Craftsmanship
                 </h2>
-                <p className="text-sm md:text-base tracking-[0.05em] text-white/50 leading-loose mb-12 max-w-lg">
+                <p className="text-sm md:text-base tracking-[0.05em] text-white/50 leading-loose mb-12 max-w-2xl px-2">
                     Since 1924, JWELLS has defined the pinnacle of luxury. Each piece is hand-refined in our Geneva atelier, ensuring that every curve and every reflection is a testament to timeless beauty.
                 </p>
-                <div className="grid grid-cols-2 gap-12 border-t border-white/5 pt-10">
+                <div className="grid grid-cols-2 gap-12 border-t border-white/5 pt-10 px-2 w-full max-w-md">
                     {[
                         { num: '300+', label: 'Hours / piece' },
                         { num: '24K', label: 'Pure Gold' }
@@ -121,14 +122,6 @@ export const AboutSection = () => (
                     ))}
                 </div>
             </motion.div>
-            <div className="relative aspect-[3/4] hidden lg:block group overflow-hidden">
-                <div className="absolute inset-0 border border-[#D4AF37]/10 group-hover:border-[#D4AF37]/30 transition-all duration-1000 z-10" />
-                <img
-                    src="https://images.unsplash.com/photo-1573408301185-9146fe634ad0?q=80&w=2000"
-                    alt="Craftsmanship"
-                    className="w-full h-full object-cover grayscale opacity-40 hover:opacity-80 transition-all duration-1000 scale-105 group-hover:scale-100"
-                />
-            </div>
         </div>
     </div>
 )
@@ -142,42 +135,43 @@ export const CollectionSection = () => {
         { name: 'Vortex Bangle', price: '€ 9,100', tag: 'Bracelet', img: 'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?q=80&w=1000' },
     ]
     return (
-        <div className="min-h-screen py-32 md:py-64 px-8 md:px-32 relative z-10 pointer-events-auto bg-black">
-            <div className="max-w-8xl mx-auto w-full">
-                <div className="flex flex-col md:flex-row md:items-end justify-between mb-24 md:mb-40 gap-12">
+        <div className="min-h-screen py-32 md:py-64 px-6 md:px-20 lg:px-32 relative z-10 pointer-events-auto bg-black">
+            <div className="max-w-7xl mx-auto w-full px-4 flex flex-col items-center">
+                <div className="flex flex-col items-center text-center mb-24 md:mb-40 gap-12 w-full">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 1.2 }}
+                        className="px-2"
                     >
-                        <p className="text-[10px] tracking-[1.2em] text-[#D4AF37] uppercase mb-8 ml-[1.2em]">The Collection</p>
-                        <h2 className="text-5xl md:text-8xl lg:text-9xl font-light text-white leading-[0.95] -ml-2" style={{ fontFamily: "'Playfair Display', serif" }}>
-                            Selected<br /><span className="text-[#D4AF37] italic">Works</span>
+                        <p className="text-[10px] tracking-[1.2em] text-[#D4AF37] uppercase mb-8">The Collection</p>
+                        <h2 className="text-5xl md:text-8xl lg:text-9xl font-light text-white leading-[0.95]" style={{ fontFamily: "'Playfair Display', serif" }}>
+                            Selected <span className="text-[#D4AF37] italic">Works</span>
                         </h2>
                     </motion.div>
-                    <div className="flex flex-col items-start md:items-end gap-6">
-                        <p className="text-white/30 text-xs tracking-widest max-w-[280px] md:text-right leading-relaxed font-light">
+                    <div className="flex flex-col items-center gap-6 px-6 max-w-2xl">
+                        <p className="text-white/30 text-xs tracking-widest leading-relaxed font-light">
                             Each creation is a unique convergence of heritage and avant-garde design.
                         </p>
-                        <button className="text-[10px] tracking-[0.4em] uppercase text-white hover:text-[#D4AF37] transition-all duration-500 flex items-center gap-4 group">
+                        <button className="relative text-[10px] tracking-[0.4em] uppercase text-white hover:text-[#D4AF37] transition-all duration-500 pb-2 group flex flex-col items-center">
                             <span>VIEW FULL GALLERY</span>
-                            <div className="w-10 h-[1px] bg-[#D4AF37]/40 group-hover:w-16 transition-all duration-700" />
+                            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-8 h-[1px] bg-[#D4AF37]/40 group-hover:w-full transition-all duration-700" />
                         </button>
                     </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 lg:gap-24 px-6">
                     {items.map((item, i) => (
                         <motion.div
                             key={item.name}
-                            initial={{ opacity: 0 }}
-                            whileInView={{ opacity: 1 }}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 1, delay: i * 0.1 }}
-                            className="group cursor-none relative"
+                            className="group cursor-none relative p-8 md:p-10 bg-white/[0.02] border border-white/[0.05] hover:border-[#D4AF37]/20 transition-all duration-700"
                         >
-                            <div className="relative aspect-[3/4] overflow-hidden mb-8 border border-white/5 bg-[#111]">
+                            <div className="relative aspect-[3/4] overflow-hidden mb-10 border border-white/5 bg-[#111]">
                                 <img
                                     src={item.img}
                                     alt={item.name}
@@ -190,7 +184,7 @@ export const CollectionSection = () => {
                                 </div>
                             </div>
 
-                            <div className="flex flex-col gap-2 relative z-10 overflow-hidden group-hover:translate-x-2 transition-transform duration-700">
+                            <div className="flex flex-col gap-3 relative z-10 overflow-hidden group-hover:translate-x-2 transition-transform duration-700">
                                 <h3 className="text-xl text-white font-light tracking-[0.05em]">{item.name}</h3>
                                 <div className="flex items-center gap-4">
                                     <div className="w-4 h-[1px] bg-[#D4AF37]/50" />
@@ -208,20 +202,20 @@ export const CollectionSection = () => {
 // ─── CONTACT ────────────────────────────────────────────────────────────────
 export const ContactSection = () => (
     <div className="min-h-screen flex items-center px-6 md:px-20 lg:px-32 relative z-10 pointer-events-auto py-20">
-        <div className="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-20 lg:gap-32">
-            <div>
-                <p className="text-[9px] tracking-[1.0em] text-[#D4AF37]/80 uppercase mb-8 pl-[1.0em]">Inquire</p>
+        <div className="max-w-5xl mx-auto w-full flex flex-col items-center text-center px-4">
+            <div className="mb-20 flex flex-col items-center">
+                <p className="text-[9px] tracking-[1.0em] text-[#D4AF37]/80 uppercase mb-8">Inquire</p>
                 <h2 className="text-4xl md:text-6xl lg:text-7xl font-light text-white leading-[1.05] mb-12" style={{ fontFamily: "'Playfair Display', serif" }}>
                     Begin Your <span className="text-[#D4AF37] italic">Legacy</span>
                 </h2>
-                <div className="space-y-10">
+                <div className="flex flex-col md:flex-row gap-8 md:gap-16 justify-center">
                     {[
                         { Icon: Phone, text: '+41 22 123 4567', label: 'Geneva Head Atelier' },
                         { Icon: Mail, text: 'concierge@jwells.com', label: 'Private Appointments' },
                         { Icon: MapPin, text: 'Dubai · Tokyo · Paris', label: 'Global Presence' },
                     ].map(c => (
-                        <div key={c.label} className="flex items-center gap-8 group">
-                            <div className="w-14 h-14 border border-[#D4AF37]/20 flex items-center justify-center text-[#D4AF37]/60 group-hover:border-[#D4AF37] group-hover:text-[#D4AF37] transition-all duration-500">
+                        <div key={c.label} className="flex flex-col items-center group">
+                            <div className="w-14 h-14 border border-[#D4AF37]/20 flex items-center justify-center text-[#D4AF37]/60 group-hover:border-[#D4AF37] group-hover:text-[#D4AF37] transition-all duration-500 mb-4">
                                 <c.Icon size={20} strokeWidth={1} />
                             </div>
                             <div>
@@ -233,29 +227,31 @@ export const ContactSection = () => (
                 </div>
             </div>
 
-            <form className="flex flex-col gap-8 lg:pt-10" onSubmit={e => e.preventDefault()}>
-                <div className="group">
-                    <input
-                        type="text"
-                        placeholder="Full Name"
-                        className="w-full bg-transparent border-b border-white/10 px-0 py-4 text-base text-white focus:outline-none focus:border-[#D4AF37] transition-all placeholder:text-white/20 font-light tracking-wide"
-                    />
-                </div>
-                <div className="group">
-                    <input
-                        type="email"
-                        placeholder="Email Address"
-                        className="w-full bg-transparent border-b border-white/10 px-0 py-4 text-base text-white focus:outline-none focus:border-[#D4AF37] transition-all placeholder:text-white/20 font-light tracking-wide"
-                    />
+            <form className="flex flex-col gap-8 w-full max-w-2xl px-6" onSubmit={e => e.preventDefault()}>
+                <div className="grid md:grid-cols-2 gap-8">
+                    <div className="group">
+                        <input
+                            type="text"
+                            placeholder="Full Name"
+                            className="w-full bg-transparent border-b border-white/10 px-4 py-4 text-base text-white focus:outline-none focus:border-[#D4AF37] transition-all placeholder:text-white/20 font-light tracking-wide"
+                        />
+                    </div>
+                    <div className="group">
+                        <input
+                            type="email"
+                            placeholder="Email Address"
+                            className="w-full bg-transparent border-b border-white/10 px-4 py-4 text-base text-white focus:outline-none focus:border-[#D4AF37] transition-all placeholder:text-white/20 font-light tracking-wide"
+                        />
+                    </div>
                 </div>
                 <div className="group">
                     <textarea
                         rows={4}
                         placeholder="Message..."
-                        className="w-full bg-transparent border-b border-white/10 px-0 py-4 text-base text-white focus:outline-none focus:border-[#D4AF37] transition-all resize-none placeholder:text-white/20 font-light tracking-wide"
+                        className="w-full bg-transparent border-b border-white/10 px-4 py-4 text-base text-white focus:outline-none focus:border-[#D4AF37] transition-all resize-none placeholder:text-white/20 font-light tracking-wide"
                     />
                 </div>
-                <button type="submit" className="mt-8 border border-[#D4AF37]/40 text-[#D4AF37] py-5 uppercase tracking-[0.4em] text-[10px] hover:bg-[#D4AF37] hover:text-black transition-all duration-500 w-full md:w-auto self-start px-12">
+                <button type="submit" className="mt-8 border border-[#D4AF37]/40 text-[#D4AF37] py-5 uppercase tracking-[0.4em] text-[10px] hover:bg-[#D4AF37] hover:text-black transition-all duration-500 w-full md:w-auto self-center px-12">
                     Request Consultation
                 </button>
             </form>

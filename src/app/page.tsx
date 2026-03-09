@@ -63,7 +63,7 @@ export default function Home() {
                     {/* Section 2: About (Storytelling) */}
 
                     {/* Section 2: About (Storytelling) */}
-                    <section className="h-[100vh]">
+                    <section className="min-h-screen">
                         <AboutSection />
                     </section>
 
@@ -73,13 +73,13 @@ export default function Home() {
                     </section>
 
                     {/* Section 4: Contact (Inquiry) */}
-                    <section className="h-[100vh]">
+                    <section className="min-h-screen">
                         <ContactSection />
                     </section>
 
                     {/* Footer */}
-                    <footer className="py-20 px-10 md:px-32 border-t border-white/5 flex flex-col md:flex-row items-center justify-between bg-[#050505] relative z-10">
-                        <p className="text-[9px] tracking-[0.4em] text-white/20 uppercase mb-8 md:mb-0">
+                    <footer className="py-20 px-10 md:px-32 border-t border-white/5 flex flex-col items-center justify-center bg-[#050505] relative z-10 text-center">
+                        <p className="text-[9px] tracking-[0.4em] text-white/20 uppercase mb-8">
                             © {new Date().getFullYear()} JWELLS S.A. · Excellence in Gold
                         </p>
                         <div className="flex gap-10">

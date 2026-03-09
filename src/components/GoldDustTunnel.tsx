@@ -104,7 +104,6 @@ function ShimmerParticles({ scrollProgress }: { scrollProgress: number }) {
       off[i] = Math.random()
       sp[i] = 0.2 + Math.random() * 0.5
       
-      const c = new THREE.Color(palette[Math.floor(Math.random() * palette.palette)]) // Fixed palette logic below
       const color = new THREE.Color(palette[Math.floor(Math.random() * palette.length)])
       col[i * 3] = color.r
       col[i * 3 + 1] = color.g
